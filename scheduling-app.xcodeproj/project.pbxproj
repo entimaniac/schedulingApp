@@ -422,6 +422,7 @@
 				63D922601B54921F00A34EAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63D922611B54921F00A34EAA /* Build configuration list for PBXNativeTarget "scheduling-appTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +431,7 @@
 				63D922631B54921F00A34EAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
