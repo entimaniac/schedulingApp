@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewContactViewController : UIViewController <UITabBarDelegate>
+@interface NewEventViewController : UIViewController <UITabBarDelegate>
 
 @property(nonatomic, strong) IBOutlet UIBarButtonItem *saveButton;
 @property(nonatomic, strong) IBOutlet UIBarButtonItem *cancelButton;

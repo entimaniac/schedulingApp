@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 com.justin. All rights reserved.
 //
 
-#import "NewContactViewController.h"
+#import "NewEventViewController.h"
 
-@interface NewContactViewController ()
+@interface NewEventViewController ()
 
 @end
 
-@implementation NewContactViewController
+@implementation NewEventViewController
 @synthesize saveButton, cancelButton;
 
 - (void)viewDidLoad {
@@ -21,14 +21,23 @@
 
     [saveButton setEnabled:NO];
     
+    
+    cancelButton.action = @selector(didCancel:);
+    cancelButton.target = self;
+    
+    saveButton.enabled = NO;
+    saveButton.target = self;
+    saveButton.action = @selector(didSave:);
+}
+
+-(void) didCancel:(UIBarButtonItem*)button{ [self.navigationController popToRootViewControllerAnimated:YES]; }
+
+-(void) didSave:(UIBarButtonItem*)button{
+    //do save
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-    NSLog(@"Did Press Save");
 }
 @end

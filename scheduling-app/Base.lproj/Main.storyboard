@@ -4,22 +4,37 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--New Contact View Controller-->
+        <!--New Event View Controller-->
         <scene sceneID="f0M-Kr-mVq">
             <objects>
-                <viewController id="uyn-bv-hwJ" customClass="NewContactViewController" sceneMemberID="viewController">
+                <viewController id="uyn-bv-hwJ" customClass="NewEventViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Au-aS-cCQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="QrY-Bx-9iq">
+                                <rect key="frame" x="112" y="95" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qdY-22-aoT">
+                                <rect key="frame" x="31" y="99" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fxI-bG-tso">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="MUc-b1-cS3"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="t17-wL-Cy7"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="c4E-rt-Gu6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="h2Q-o8-wxE"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="MUc-b1-cS3" id="hmq-yK-fPc"/>
-                        <outlet property="saveButton" destination="t17-wL-Cy7" id="wGk-8G-5lU"/>
+                        <outlet property="cancelButton" destination="c4E-rt-Gu6" id="PN0-jy-eFV"/>
+                        <outlet property="saveButton" destination="h2Q-o8-wxE" id="o6H-pw-nWF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mb-k6-HHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,7 +140,7 @@
                             <outlet property="delegate" destination="Qr5-It-RlR" id="O9N-9e-jd1"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="Q9G-ju-nDm"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="Q9G-ju-nDm"/>
                     <navigationItem key="navigationItem" id="B33-qy-qzq">
                         <barButtonItem key="rightBarButtonItem" title="+" systemItem="add" id="DpS-Lg-Bmp">
                             <connections>
