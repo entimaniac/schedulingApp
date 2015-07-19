@@ -40,10 +40,12 @@
 }
 
 -(void)advertiseSelf:(BOOL)shouldAdvertise{
-    if(!shouldAdvertise) return;
+    if(advertiser == nil){
+        advertiser = [[MCAdvertiserAssistant alloc] initWithServiceType:@"service" discoveryInfo:nil session: session];
+        advertiser.delegate = self;
+    }
     
-    advertiser = [[MCAdvertiserAssistant alloc] initWithServiceType:@"service" discoveryInfo:nil session: session];
-    advertiser.delegate = self;
+    (shouldAdvertise ? [advertiser start] : [advertiser stop]);
 }
 
 -(void) session:(MCSession *)sess peer:(MCPeerID *)pID didChangeState:(MCSessionState)state{

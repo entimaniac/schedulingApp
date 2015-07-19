@@ -7,17 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6375183B1B582B1F004C71B4 /* Schedule1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6375183A1B582B1F004C71B4 /* Schedule1.plist */; };
+		6375183D1B586B7B004C71B4 /* Home-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 6375183C1B586B7B004C71B4 /* Home-32.png */; };
+		637518411B586F9E004C71B4 /* Settings32.png in Resources */ = {isa = PBXBuildFile; fileRef = 637518401B586F9E004C71B4 /* Settings32.png */; };
+		637518451B5AD290004C71B4 /* Sorting-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 637518441B5AD290004C71B4 /* Sorting-32.png */; };
+		63B125661B55DFE50065368C /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B125651B55DFE50065368C /* Event.m */; };
 		63D9223E1B54921F00A34EAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D9223D1B54921F00A34EAA /* main.m */; };
 		63D922411B54921F00A34EAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D922401B54921F00A34EAA /* AppDelegate.m */; };
-		63D922441B54921F00A34EAA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D922431B54921F00A34EAA /* FirstViewController.m */; };
-		63D922471B54921F00A34EAA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D922461B54921F00A34EAA /* SecondViewController.m */; };
+		63D922441B54921F00A34EAA /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D922431B54921F00A34EAA /* TaskDetailViewController.m */; };
+		63D922471B54921F00A34EAA /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D922461B54921F00A34EAA /* HomeScreenViewController.m */; };
 		63D9224A1B54921F00A34EAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D922481B54921F00A34EAA /* Main.storyboard */; };
 		63D9224C1B54921F00A34EAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D9224B1B54921F00A34EAA /* Images.xcassets */; };
 		63D9224F1B54921F00A34EAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D9224D1B54921F00A34EAA /* LaunchScreen.xib */; };
 		63D9225B1B54921F00A34EAA /* scheduling_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D9225A1B54921F00A34EAA /* scheduling_appTests.m */; };
 		63D922661B55614A00A34EAA /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D922651B55614A00A34EAA /* MCController.m */; };
 		63D922691B557A2E00A34EAA /* testFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63D922681B557A2E00A34EAA /* testFile.plist */; };
-		63D9226C1B55837D00A34EAA /* NewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D9226B1B55837D00A34EAA /* NewEventViewController.m */; };
+		63D9226C1B55837D00A34EAA /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D9226B1B55837D00A34EAA /* NewTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,15 +36,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6375183A1B582B1F004C71B4 /* Schedule1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Schedule1.plist; sourceTree = "<group>"; };
+		6375183C1B586B7B004C71B4 /* Home-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-32.png"; sourceTree = "<group>"; };
+		637518401B586F9E004C71B4 /* Settings32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings32.png; sourceTree = "<group>"; };
+		637518441B5AD290004C71B4 /* Sorting-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sorting-32.png"; sourceTree = "<group>"; };
+		63B125641B55CC9E0065368C /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		63B125651B55DFE50065368C /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		63D922381B54921F00A34EAA /* scheduling-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "scheduling-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D9223C1B54921F00A34EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D9223D1B54921F00A34EAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63D9223F1B54921F00A34EAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63D922401B54921F00A34EAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		63D922421B54921F00A34EAA /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		63D922431B54921F00A34EAA /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		63D922451B54921F00A34EAA /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		63D922461B54921F00A34EAA /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		63D922421B54921F00A34EAA /* TaskDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
+		63D922431B54921F00A34EAA /* TaskDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
+		63D922451B54921F00A34EAA /* HomeScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
+		63D922461B54921F00A34EAA /* HomeScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
 		63D922491B54921F00A34EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63D9224B1B54921F00A34EAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63D9224E1B54921F00A34EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -49,8 +60,8 @@
 		63D922651B55614A00A34EAA /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCController.m; sourceTree = "<group>"; };
 		63D922671B55617200A34EAA /* MCController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCController.h; sourceTree = "<group>"; };
 		63D922681B557A2E00A34EAA /* testFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testFile.plist; sourceTree = "<group>"; };
-		63D9226A1B55814800A34EAA /* NewEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewEventViewController.h; sourceTree = "<group>"; };
-		63D9226B1B55837D00A34EAA /* NewEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEventViewController.m; sourceTree = "<group>"; };
+		63D9226A1B55814800A34EAA /* NewTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewTaskViewController.h; sourceTree = "<group>"; };
+		63D9226B1B55837D00A34EAA /* NewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,14 +103,16 @@
 		63D9223A1B54921F00A34EAA /* scheduling-app */ = {
 			isa = PBXGroup;
 			children = (
+				63B125641B55CC9E0065368C /* Event.h */,
+				63B125651B55DFE50065368C /* Event.m */,
 				63D9223F1B54921F00A34EAA /* AppDelegate.h */,
 				63D922401B54921F00A34EAA /* AppDelegate.m */,
-				63D922421B54921F00A34EAA /* FirstViewController.h */,
-				63D922431B54921F00A34EAA /* FirstViewController.m */,
-				63D922451B54921F00A34EAA /* SecondViewController.h */,
-				63D922461B54921F00A34EAA /* SecondViewController.m */,
-				63D9226A1B55814800A34EAA /* NewEventViewController.h */,
-				63D9226B1B55837D00A34EAA /* NewEventViewController.m */,
+				63D922421B54921F00A34EAA /* TaskDetailViewController.h */,
+				63D922431B54921F00A34EAA /* TaskDetailViewController.m */,
+				63D922451B54921F00A34EAA /* HomeScreenViewController.h */,
+				63D922461B54921F00A34EAA /* HomeScreenViewController.m */,
+				63D9226A1B55814800A34EAA /* NewTaskViewController.h */,
+				63D9226B1B55837D00A34EAA /* NewTaskViewController.m */,
 				63D922481B54921F00A34EAA /* Main.storyboard */,
 				63D9224B1B54921F00A34EAA /* Images.xcassets */,
 				63D9224D1B54921F00A34EAA /* LaunchScreen.xib */,
@@ -113,9 +126,13 @@
 		63D9223B1B54921F00A34EAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				637518441B5AD290004C71B4 /* Sorting-32.png */,
+				637518401B586F9E004C71B4 /* Settings32.png */,
+				6375183C1B586B7B004C71B4 /* Home-32.png */,
 				63D9223C1B54921F00A34EAA /* Info.plist */,
 				63D9223D1B54921F00A34EAA /* main.m */,
 				63D922681B557A2E00A34EAA /* testFile.plist */,
+				6375183A1B582B1F004C71B4 /* Schedule1.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -218,8 +235,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				63D922691B557A2E00A34EAA /* testFile.plist in Resources */,
+				637518411B586F9E004C71B4 /* Settings32.png in Resources */,
+				637518451B5AD290004C71B4 /* Sorting-32.png in Resources */,
 				63D9224A1B54921F00A34EAA /* Main.storyboard in Resources */,
 				63D9224F1B54921F00A34EAA /* LaunchScreen.xib in Resources */,
+				6375183D1B586B7B004C71B4 /* Home-32.png in Resources */,
+				6375183B1B582B1F004C71B4 /* Schedule1.plist in Resources */,
 				63D9224C1B54921F00A34EAA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,11 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				63D922661B55614A00A34EAA /* MCController.m in Sources */,
-				63D922471B54921F00A34EAA /* SecondViewController.m in Sources */,
-				63D9226C1B55837D00A34EAA /* NewEventViewController.m in Sources */,
+				63D922471B54921F00A34EAA /* HomeScreenViewController.m in Sources */,
+				63D9226C1B55837D00A34EAA /* NewTaskViewController.m in Sources */,
 				63D922411B54921F00A34EAA /* AppDelegate.m in Sources */,
-				63D922441B54921F00A34EAA /* FirstViewController.m in Sources */,
+				63D922441B54921F00A34EAA /* TaskDetailViewController.m in Sources */,
 				63D9223E1B54921F00A34EAA /* main.m in Sources */,
+				63B125661B55DFE50065368C /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
