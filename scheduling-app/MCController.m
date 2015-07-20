@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 com.justin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "MCController.h"
 
 @interface MCController()
@@ -19,14 +18,11 @@
     
 }
 
--(MCController*) init {
-    
-    return self;
-}
 -(void)setupPeerAndSessionWithDisplay:(NSString *)displayName{
+    if(session != nil) return;
+    
     /*setup PeerID*/
     peerID = [[MCPeerID alloc] initWithDisplayName:displayName];
-    
     /*setup session*/
     session = [[MCSession alloc] initWithPeer: peerID];
     session.delegate = self;
@@ -35,6 +31,7 @@
 
 -(void)setupMCBrowser{
     /*setup browser*/
+    if(browser != nil) return;
     browser = [[MCBrowserViewController alloc] initWithServiceType:@"service" session:session];
     browser.delegate = self;
 }
@@ -44,8 +41,9 @@
         advertiser = [[MCAdvertiserAssistant alloc] initWithServiceType:@"service" discoveryInfo:nil session: session];
         advertiser.delegate = self;
     }
-    
     (shouldAdvertise ? [advertiser start] : [advertiser stop]);
+    [advertiser start];
+    return;
 }
 
 -(void) session:(MCSession *)sess peer:(MCPeerID *)pID didChangeState:(MCSessionState)state{

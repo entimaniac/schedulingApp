@@ -15,18 +15,31 @@
 @synthesize event, events, cancelButton, saveButton, titleField, locationField, startDatePicker, endDatePicker;
 
 -(void) viewDidLoad{
-    event = [[Event alloc] init];
-    
+/*Initialize event if nil*/
+    if(event == nil){
+        event = [[Event alloc] init];
+        startDatePicker.date = [NSDate date];
+        endDatePicker.date = [[NSDate date] addTimeInterval:60];
+    }
+/*Propogate Text Fields if and Event was Passed In*/
+    else{
+        titleField.text = event.title;
+        locationField.text = event.location;
+        startDatePicker.date = event.startDate;
+        endDatePicker.date = event.endDate;
+    }
+/*Add Actions to UI Elements*/
     [titleField addTarget:self action:@selector(fieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [locationField addTarget:self action:@selector(fieldChanged:) forControlEvents:UIControlEventEditingChanged];
-    
+    [startDatePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
+    [endDatePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
+/*Initialize and Place UITabBarButton elements*/
     cancelButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(navButtonPressed:)];
     self.navigationItem.leftBarButtonItem = cancelButton;
     
     saveButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(navButtonPressed:)];
-    saveButton.enabled = NO;
+    saveButton.enabled = (titleField.text.length > 0 && locationField.text.length);
     self.navigationItem.rightBarButtonItem = saveButton;
-    
 }
 
 -(void) navButtonPressed:(UIBarButtonItem*)navButton{
@@ -38,14 +51,25 @@
         [events addObject: event];
         [self.navigationController popToRootViewControllerAnimated:YES];
     } else if(navButton == cancelButton) {
-        //UIAlert to make sure
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [[[UIAlertView alloc] initWithTitle: @"Cancel" message: @"Are you sure you want to cancel?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil] show];
+        //[self.navigationController popToRootViewControllerAnimated:YES];
     }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == alertView.firstOtherButtonIndex) [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(void) fieldChanged:(UITextField*)field{
     if(field == titleField) self.navigationItem.title = titleField.text;
     saveButton.enabled = (titleField.text.length > 0 && locationField.text.length > 0);
+}
+
+-(void) datePickerChanged:(UIDatePicker*)datePicker{
+    if(datePicker == startDatePicker){
+        startDatePicker.minimumDate = [NSDate date];
+        endDatePicker.minimumDate = [startDatePicker.date addTimeInterval:60];
+    } else if(datePicker == endDatePicker) endDatePicker.minimumDate = [NSDate date];
 }
 
 @end

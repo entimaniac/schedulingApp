@@ -17,26 +17,32 @@
     shouldAdvertise = YES;
     mcController = [[MCController alloc] init];
     
-    actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonPressed:)];
+    actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(navButtonPressed:)];
     self.navigationItem.rightBarButtonItem = actionButton;
     
-    actionSheet = [[UIActionSheet alloc] initWithTitle:@"MCC Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:@"Browse", @"Advertise", nil];
+    actionSheet = [[UIActionSheet alloc] initWithTitle:@"MCC Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:@"Edit", @"Browse", @"Advertise", nil];
     
     self.navigationItem.title = event.title;
 }
 
--(void)actionButtonPressed:(UIBarButtonItem*)button{
-    [actionSheet showFromBarButtonItem:button animated:YES];
+-(void)navButtonPressed:(UIBarButtonItem*)navButton{
+    if(navButton == actionButton) [actionSheet showFromBarButtonItem:navButton animated:YES];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"editTaskSegue"]){
+        EditTaskViewController *destVC = segue.destinationViewController;
+        destVC.event = event;
+    }
+}
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 1){
+    if(buttonIndex == 1) [self performSegueWithIdentifier:@"editTaskSegue" sender:self];
+    else if(buttonIndex == 2){
         [mcController setupPeerAndSessionWithDisplay:@"user1"];
         [mcController setupMCBrowser];
         [self presentViewController:mcController.browser animated:YES completion:nil];
-    }
-    else if(buttonIndex == 2){
+    } else if(buttonIndex == 2){
         [mcController setupPeerAndSessionWithDisplay:@"user1"];
         [mcController advertiseSelf:shouldAdvertise];
         shouldAdvertise = !shouldAdvertise;

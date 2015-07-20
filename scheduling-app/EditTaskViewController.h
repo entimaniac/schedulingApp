@@ -9,12 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 
-@interface EditTaskViewController : UITableViewController
+@interface EditTaskViewController : UITableViewController <UIAlertViewDelegate>
     @property(strong, nonatomic) Event *event;
     @property(weak, nonatomic) NSMutableArray *events;
-    @property(weak, nonatomic) IBOutlet UIDatePicker *startDatePicker;
-    @property(weak, nonatomic) IBOutlet UIDatePicker *endDatePicker;
-    @property(weak, nonatomic) IBOutlet UITextField *titleField;
-    @property(weak, nonatomic) IBOutlet UITextField *locationField;
+    @property(weak, nonatomic) IBOutlet UIDatePicker *startDatePicker, *endDatePicker;
+    @property(weak, nonatomic) IBOutlet UITextField *titleField, *locationField;
     @property(strong, nonatomic) UIBarButtonItem *saveButton, *cancelButton;
 @end

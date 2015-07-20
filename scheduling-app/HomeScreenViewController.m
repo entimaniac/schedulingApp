@@ -41,12 +41,11 @@
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"taskSelectedSegue"]){
+    if([segue.identifier isEqualToString:@"selectTaskSegue"]){
         TaskDetailViewController *destVC = segue.destinationViewController;
         destVC.event = [events objectAtIndex:[eventView indexPathForSelectedRow].row];
-    }
-    else if([segue.identifier isEqualToString:@"newTaskSegue"]){
-        NewTaskViewController *destVC = segue.destinationViewController;
+    } else if([segue.identifier isEqualToString:@"newTaskSegue"]){
+        EditTaskViewController *destVC = segue.destinationViewController;
         destVC.events = events;
     }
 }

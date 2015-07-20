@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 #import "TaskDetailViewController.h"
-#import "NewTaskViewController.h"
+#import "EditTaskViewController.h"
 
 @interface HomeScreenViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
     @property(strong, nonatomic) NSMutableArray *events;
