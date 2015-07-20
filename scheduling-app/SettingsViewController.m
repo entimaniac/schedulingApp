@@ -6,9 +6,13 @@
 //  Copyright (c) 2015 com.justin. All rights reserved.
 //
 
+
 #import "SettingsViewController.h"
 @interface SettingsViewController()
 @end
 
 @implementation SettingsViewController
+-(void) viewDidLoad{
+    
+}
 @end

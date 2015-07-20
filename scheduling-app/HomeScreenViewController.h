@@ -10,7 +10,8 @@
 #import "TaskDetailViewController.h"
 #import "EditTaskViewController.h"
 
-@interface HomeScreenViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface HomeScreenViewController : UITableViewController
     @property(strong, nonatomic) NSMutableArray *events;
     @property(strong, nonatomic) UITableView *eventView;
+    @property(strong, nonatomic) UIRefreshControl *refreshControl;
 @end

@@ -11,7 +11,7 @@
 #import "SettingsViewController.h"
 
 @interface SettingsDetailViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
-    @property(strong, nonatomic) NSArray *songs;
-@property(strong, nonatomic) NSIndexPath *indexPathSelectedCell;
+    @property(strong, nonatomic) NSIndexPath *indexPathSelectedCell;
     @property soundID *notificationName;
+    @property(strong, nonatomic) NSArray *notificationSounds;
 @end

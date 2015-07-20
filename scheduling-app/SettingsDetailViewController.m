@@ -12,12 +12,16 @@
 @end
 
 @implementation SettingsDetailViewController
-@synthesize songs, indexPathSelectedCell;
+@synthesize notificationSounds, indexPathSelectedCell;
+-(void) viewDidLoad{
+    notificationSounds = [[NSArray alloc] initWithContentsOfFile:@"notificationSounds.plist"];
+}
+
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"notificationSoundCell"];
     if(cell == nil) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"notificationSoundCell"];
     
-    cell.textLabel.text = @"sound";
+    cell.textLabel.text = [notificationSounds objectAtIndex: indexPath.row];
 
     return cell;
 }
@@ -31,7 +35,7 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return /*[songs count]*/ 2;
+    return /*[notificationSounds count]*/ 2;
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
