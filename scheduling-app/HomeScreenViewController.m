@@ -44,6 +44,7 @@
     if([segue.identifier isEqualToString:@"selectTaskSegue"]){
         TaskDetailViewController *destVC = segue.destinationViewController;
         destVC.event = [events objectAtIndex:[eventView indexPathForSelectedRow].row];
+        destVC.events = events;
     } else if([segue.identifier isEqualToString:@"newTaskSegue"]){
         EditTaskViewController *destVC = segue.destinationViewController;
         destVC.events = events;

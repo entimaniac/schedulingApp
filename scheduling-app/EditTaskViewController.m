@@ -34,10 +34,10 @@
     [startDatePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
     [endDatePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
 /*Initialize and Place UITabBarButton elements*/
-    cancelButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(navButtonPressed:)];
+    if(cancelButton == nil) cancelButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(navButtonPressed:)];
     self.navigationItem.leftBarButtonItem = cancelButton;
     
-    saveButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(navButtonPressed:)];
+    if(saveButton == nil) saveButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(navButtonPressed:)];
     saveButton.enabled = (titleField.text.length > 0 && locationField.text.length);
     self.navigationItem.rightBarButtonItem = saveButton;
 }
@@ -49,15 +49,15 @@
         event.startDate = startDatePicker.date;
         event.endDate = endDatePicker.date;
         [events addObject: event];
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
     } else if(navButton == cancelButton) {
         [[[UIAlertView alloc] initWithTitle: @"Cancel" message: @"Are you sure you want to cancel?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil] show];
-        //[self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == alertView.firstOtherButtonIndex) [self.navigationController popToRootViewControllerAnimated:YES];
+    if(buttonIndex == alertView.firstOtherButtonIndex) [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 -(void) fieldChanged:(UITextField*)field{

@@ -10,11 +10,12 @@
 #import "MCController.h"
 #import "EditTaskViewController.h"
 
-@interface TaskDetailViewController : UITableViewController <UIActionSheetDelegate>
+@interface TaskDetailViewController : UITableViewController <UIActionSheetDelegate, UIAlertViewDelegate>
     @property(strong, nonatomic) UIBarButtonItem *actionButton;
     @property(strong, nonatomic) UIActionSheet *actionSheet;
     @property(strong, nonatomic) MCController *mcController;
     @property(weak, nonatomic) Event *event;
+    @property(weak, nonatomic) NSMutableArray *events;
     @property(weak, nonatomic) IBOutlet UILabel *titleLbl, *locationLbl, *startDateLbl, *endDateLbl;
     @property BOOL shouldAdvertise;
 @end

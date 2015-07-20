@@ -12,8 +12,17 @@
 @end
 
 @implementation TaskDetailViewController
-@synthesize event, actionButton, actionSheet, mcController, shouldAdvertise;
--(void)viewDidLoad{
+@synthesize event, events, actionButton, actionSheet, mcController, shouldAdvertise, titleLbl, locationLbl, startDateLbl, endDateLbl;
+-(void)viewDidLoad {
+    NSDateFormatter *dForm = [[NSDateFormatter alloc] init];
+    dForm.dateStyle = NSDateFormatterLongStyle;
+    dForm.timeStyle = NSDateFormatterFullStyle;
+    
+    titleLbl.text = event.title;
+    locationLbl.text = event.location;
+    startDateLbl.text = [dForm stringFromDate:event.startDate];
+    endDateLbl.text = [dForm stringFromDate:event.endDate];
+    
     shouldAdvertise = YES;
     mcController = [[MCController alloc] init];
     
@@ -36,16 +45,26 @@
     }
 }
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 1) [self performSegueWithIdentifier:@"editTaskSegue" sender:self];
-    else if(buttonIndex == 2){
+-(void)actionSheet:(UIActionSheet *)aSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == aSheet.firstOtherButtonIndex) [self performSegueWithIdentifier:@"editTaskSegue" sender:self];
+    else if(buttonIndex == aSheet.firstOtherButtonIndex + 1){
         [mcController setupPeerAndSessionWithDisplay:@"user1"];
         [mcController setupMCBrowser];
         [self presentViewController:mcController.browser animated:YES completion:nil];
-    } else if(buttonIndex == 2){
+    } else if(buttonIndex == aSheet.firstOtherButtonIndex + 2){
         [mcController setupPeerAndSessionWithDisplay:@"user1"];
         [mcController advertiseSelf:shouldAdvertise];
         shouldAdvertise = !shouldAdvertise;
+    }else if(buttonIndex == aSheet.destructiveButtonIndex){
+        [events removeObject:event];
+        [[[UIAlertView alloc] initWithTitle:@"Delete" message:@"Are you sure you want to delete this event?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil] show];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == alertView.firstOtherButtonIndex){
+        [events removeObject:event];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 @end
