@@ -7,12 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		630F196D1B5C6BA00013DE23 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630F196C1B5C6BA00013DE23 /* EditTaskViewController.m */; };
-		630F19701B5C6C380013DE23 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 630F196F1B5C6C380013DE23 /* Event.m */; };
-		630F19721B5C87E20013DE23 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630F19711B5C87E20013DE23 /* TaskDetailViewController.m */; };
-		630F19771B5CA9030013DE23 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630F19761B5CA9020013DE23 /* SettingsViewController.m */; };
-		63BA30EF1B5C6AB800B27C43 /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA30EE1B5C6AB800B27C43 /* HomeScreenViewController.m */; };
-		63C098F71B5D08F000D2D2FD /* SettingsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C098F61B5D08F000D2D2FD /* SettingsDetailViewController.m */; };
+		634F2F791B5D5C050005B486 /* Data Models in Resources */ = {isa = PBXBuildFile; fileRef = 634F2F781B5D5C050005B486 /* Data Models */; };
+		634F2F7B1B5D5CFE0005B486 /* UIModels in Resources */ = {isa = PBXBuildFile; fileRef = 634F2F7A1B5D5CFE0005B486 /* UIModels */; };
 		63C098F91B5D0B6D00D2D2FD /* notificationSounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C098F81B5D0B6D00D2D2FD /* notificationSounds.plist */; };
 		63D9223E1B54921F00A34EAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D9223D1B54921F00A34EAA /* main.m */; };
 		63D922411B54921F00A34EAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D922401B54921F00A34EAA /* AppDelegate.m */; };
@@ -35,18 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		630F196B1B5C6B590013DE23 /* EditTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
-		630F196C1B5C6BA00013DE23 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
-		630F196E1B5C6BFD0013DE23 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		630F196F1B5C6C380013DE23 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		630F19711B5C87E20013DE23 /* TaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
-		630F19731B5C87F30013DE23 /* TaskDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
-		630F19751B5CA8BA0013DE23 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		630F19761B5CA9020013DE23 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		63BA30ED1B5C6A8D00B27C43 /* HomeScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
-		63BA30EE1B5C6AB800B27C43 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
-		63C098F51B5D087000D2D2FD /* SettingsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsDetailViewController.h; sourceTree = "<group>"; };
-		63C098F61B5D08F000D2D2FD /* SettingsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsDetailViewController.m; sourceTree = "<group>"; };
+		634F2F781B5D5C050005B486 /* Data Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Data Models"; sourceTree = "<group>"; };
+		634F2F7A1B5D5CFE0005B486 /* UIModels */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIModels; sourceTree = "<group>"; };
 		63C098F81B5D0B6D00D2D2FD /* notificationSounds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = notificationSounds.plist; sourceTree = "<group>"; };
 		63D922381B54921F00A34EAA /* scheduling-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "scheduling-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D9223C1B54921F00A34EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,20 +89,10 @@
 		63D9223A1B54921F00A34EAA /* scheduling-app */ = {
 			isa = PBXGroup;
 			children = (
-				63C098F51B5D087000D2D2FD /* SettingsDetailViewController.h */,
-				63C098F61B5D08F000D2D2FD /* SettingsDetailViewController.m */,
-				630F196E1B5C6BFD0013DE23 /* Event.h */,
-				630F196F1B5C6C380013DE23 /* Event.m */,
+				634F2F7A1B5D5CFE0005B486 /* UIModels */,
+				634F2F781B5D5C050005B486 /* Data Models */,
 				63D9223F1B54921F00A34EAA /* AppDelegate.h */,
 				63D922401B54921F00A34EAA /* AppDelegate.m */,
-				630F196B1B5C6B590013DE23 /* EditTaskViewController.h */,
-				630F196C1B5C6BA00013DE23 /* EditTaskViewController.m */,
-				630F19731B5C87F30013DE23 /* TaskDetailViewController.h */,
-				630F19711B5C87E20013DE23 /* TaskDetailViewController.m */,
-				63BA30ED1B5C6A8D00B27C43 /* HomeScreenViewController.h */,
-				63BA30EE1B5C6AB800B27C43 /* HomeScreenViewController.m */,
-				630F19751B5CA8BA0013DE23 /* SettingsViewController.h */,
-				630F19761B5CA9020013DE23 /* SettingsViewController.m */,
 				63D922481B54921F00A34EAA /* Main.storyboard */,
 				63D9224B1B54921F00A34EAA /* Images.xcassets */,
 				63D9224D1B54921F00A34EAA /* LaunchScreen.xib */,
@@ -236,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				63D922691B557A2E00A34EAA /* testFile.plist in Resources */,
+				634F2F791B5D5C050005B486 /* Data Models in Resources */,
+				634F2F7B1B5D5CFE0005B486 /* UIModels in Resources */,
 				63D9224A1B54921F00A34EAA /* Main.storyboard in Resources */,
 				63D9224F1B54921F00A34EAA /* LaunchScreen.xib in Resources */,
 				63D9224C1B54921F00A34EAA /* Images.xcassets in Resources */,
@@ -257,15 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630F19721B5C87E20013DE23 /* TaskDetailViewController.m in Sources */,
-				63BA30EF1B5C6AB800B27C43 /* HomeScreenViewController.m in Sources */,
 				63D922661B55614A00A34EAA /* MCController.m in Sources */,
-				630F19771B5CA9030013DE23 /* SettingsViewController.m in Sources */,
 				63D922411B54921F00A34EAA /* AppDelegate.m in Sources */,
-				630F19701B5C6C380013DE23 /* Event.m in Sources */,
-				63C098F71B5D08F000D2D2FD /* SettingsDetailViewController.m in Sources */,
 				63D9223E1B54921F00A34EAA /* main.m in Sources */,
-				630F196D1B5C6BA00013DE23 /* EditTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

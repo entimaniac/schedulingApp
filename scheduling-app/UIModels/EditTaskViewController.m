@@ -69,7 +69,7 @@
     if(datePicker == startDatePicker){
         startDatePicker.minimumDate = [NSDate date];
         endDatePicker.minimumDate = [startDatePicker.date addTimeInterval:60];
-    } else if(datePicker == endDatePicker) endDatePicker.minimumDate = [NSDate date];
+    } else if(datePicker == endDatePicker) endDatePicker.minimumDate = [startDatePicker.date addTimeInterval:60];
 }
 
 @end

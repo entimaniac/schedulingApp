@@ -53,8 +53,8 @@
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = NSTextAlignmentCenter;
         [messageLabel sizeToFit];
-        messageLabel.backgroundColor = [UIColor blueColor];
-        messageLabel.textColor = [UIColor whiteColor];
+        //messageLabel.backgroundColor = [UIColor blueColor];
+        //messageLabel.textColor = [UIColor whiteColor];
         tableView.backgroundView = messageLabel;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         return 0;
