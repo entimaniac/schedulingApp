@@ -6,12 +6,11 @@
 //  Copyright (c) 2015 com.justin. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "Event.h"
+#import "Task.h"
 #import "TaskDetailViewController.h"
 #import "EditTaskViewController.h"
 
 @interface HomeScreenViewController : UITableViewController
-    @property(strong, nonatomic) NSMutableArray *events;
-    @property(strong, nonatomic) UITableView *eventView;
+    @property(strong, nonatomic) NSMutableArray *tasks;
     @property(strong, nonatomic) UIRefreshControl *refreshControl;
 @end
