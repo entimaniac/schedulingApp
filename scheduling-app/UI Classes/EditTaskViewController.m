@@ -12,21 +12,21 @@
 @end
 
 @implementation EditTaskViewController
-@synthesize event, events, cancelButton, saveButton, titleField, locationField, startDatePicker, endDatePicker;
+@synthesize task, tasks, cancelButton, saveButton, titleField, locationField, startDatePicker, endDatePicker;
 
 -(void) viewDidLoad{
 /*Initialize event if nil*/
-    if(event == nil){
-        event = [[Event alloc] init];
+    if(task == nil){
+        task = [[Task alloc] init];
         startDatePicker.date = [NSDate date];
-        endDatePicker.date = [[NSDate date] addTimeInterval:60];
+        endDatePicker.date = [[NSDate date] dateByAddingTimeInterval:60];
     }
 /*Propogate Text Fields if and Event was Passed In*/
     else{
-        titleField.text = event.title;
-        locationField.text = event.location;
-        startDatePicker.date = event.startDate;
-        endDatePicker.date = event.endDate;
+        titleField.text = task.title;
+        locationField.text = task.location;
+        startDatePicker.date = task.timeFrame.startTime;
+        endDatePicker.date = task.timeFrame.endTime;
     }
 /*Add Actions to UI Elements*/
     [titleField addTarget:self action:@selector(fieldChanged:) forControlEvents:UIControlEventEditingChanged];
@@ -44,11 +44,13 @@
 
 -(void) navButtonPressed:(UIBarButtonItem*)navButton{
     if(navButton == saveButton) {
-        event.title = titleField.text;
-        event.location = locationField.text;
-        event.startDate = startDatePicker.date;
-        event.endDate = endDatePicker.date;
-        [events addObject: event];
+        [task setTitle: titleField.text];
+        [task setLocation: locationField.text];
+        
+        [task getTags];
+        
+        [task setTimeFrame:[[TimeFrame alloc] initWithStart:startDatePicker.date andEnd:endDatePicker.date]];
+        [tasks addObject: task];
         [self.navigationController popViewControllerAnimated:YES];
     } else if(navButton == cancelButton) {
         [[[UIAlertView alloc] initWithTitle: @"Cancel" message: @"Are you sure you want to cancel?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil] show];
@@ -68,8 +70,11 @@
 -(void) datePickerChanged:(UIDatePicker*)datePicker{
     if(datePicker == startDatePicker){
         startDatePicker.minimumDate = [NSDate date];
-        endDatePicker.minimumDate = [startDatePicker.date addTimeInterval:60];
-    } else if(datePicker == endDatePicker) endDatePicker.minimumDate = [startDatePicker.date addTimeInterval:60];
+        endDatePicker.minimumDate = [startDatePicker.date dateByAddingTimeInterval:60];
+    } else if(datePicker == endDatePicker){
+        if([endDatePicker.date timeIntervalSinceNow] < 0) endDatePicker.date = [[NSDate date] dateByAddingTimeInterval:[endDatePicker.date timeIntervalSinceDate:startDatePicker.date]];
+        endDatePicker.minimumDate = [[NSDate date] dateByAddingTimeInterval:60];
+    }
 }
 
 @end

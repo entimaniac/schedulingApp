@@ -9,6 +9,12 @@
 #import "TimeFrame.h"
 
 @implementation TimeFrame
+@synthesize startTime, endTime;
 
+-(TimeFrame*) initWithStart:(NSDate*)start andEnd:(NSDate*) end{
+    startTime = start;
+    endTime = end;
+    return self;
+}
 
 @end

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Event.h"
+#import "Task.h"
 
 @interface EditTaskViewController : UITableViewController <UIAlertViewDelegate>
-    @property(strong, nonatomic) Event *event;
-    @property(weak, nonatomic) NSMutableArray *events;
+    @property(strong, nonatomic) Task *task;
+    @property(weak, nonatomic) NSMutableArray *tasks;
     @property(weak, nonatomic) IBOutlet UIDatePicker *startDatePicker, *endDatePicker;
     @property(weak, nonatomic) IBOutlet UITextField *titleField, *locationField;
     @property(strong, nonatomic) UIBarButtonItem *saveButton, *cancelButton;

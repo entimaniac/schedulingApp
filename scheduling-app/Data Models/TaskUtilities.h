@@ -1,5 +1,5 @@
 //
-//  TaskUtilies.h
+//  TaskUtilities.h
 //  scheduling-app
 //
 //  Created by William McCall on 7/16/15.
@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIColor.h>
 
-@interface TaskUtilies : NSObject
+typedef enum {redColor, greenColor, blueColor} ColorID;
+
+@interface TaskUtilities : NSObject
 
     // Returns a color based on the id number inputed
     +(UIColor *) getColorFromID:(NSNumber *)idNumber;

@@ -12,5 +12,8 @@
 
 @property(strong, nonatomic) NSDate * startTime;
 @property(strong, nonatomic) NSDate * endTime;
+@property(strong, nonatomic) NSArray *reccurrences;
+
+-(TimeFrame*) initWithStart:(NSDate*)start andEnd:(NSDate*)end;
 
 @end

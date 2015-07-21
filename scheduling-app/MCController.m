@@ -38,23 +38,19 @@
 
 -(void)advertiseSelf:(BOOL)shouldAdvertise{
     if(advertiser == nil){
-        advertiser = [[MCAdvertiserAssistant alloc] initWithServiceType:@"service" discoveryInfo:nil session: session];
+        advertiser = [[MCAdvertiserAssistant alloc] initWithServiceType:@"service" discoveryInfo:nil session:session];
         advertiser.delegate = self;
     }
     (shouldAdvertise ? [advertiser start] : [advertiser stop]);
     [advertiser start];
-    return;
 }
 
 -(void) session:(MCSession *)sess peer:(MCPeerID *)pID didChangeState:(MCSessionState)state{
-    NSString *name = @"testFile.plist";
-    NSURL *myURL = [[NSURL alloc] initWithString:name];
     
-    if(state == MCSessionStateConnected) progress = [sess sendResourceAtURL:myURL withName:name toPeer:pID withCompletionHandler:^(NSError *error){NSLog(error.localizedDescription);}];
 }
 
--(void) session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress{
-    NSLog(@"Starting receiving");
+-(void) session:(MCSession *)sess didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress{
+    [sess disconnect];
 }
 
 -(void) session:(MCSession *)sess didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error{

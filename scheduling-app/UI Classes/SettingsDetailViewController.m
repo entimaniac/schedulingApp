@@ -35,7 +35,7 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return /*[notificationSounds count]*/ 2;
+    return notificationSounds.count;
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{

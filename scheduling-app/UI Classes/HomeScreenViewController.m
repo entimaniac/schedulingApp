@@ -12,20 +12,18 @@
 @end
 
 @implementation HomeScreenViewController
-@synthesize events, eventView, refreshControl;
+@synthesize tasks, refreshControl;
 
 -(void) viewDidLoad{
-    events = [[NSMutableArray alloc] init];
-    eventView.dataSource = self;
-    eventView.delegate = self;
+    tasks = [[NSMutableArray alloc] init];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
     refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
 }
--(void)viewDidAppear:(BOOL)animated{
-    [eventView reloadData];
-}
+-(void)viewDidAppear:(BOOL)animated{ [self.tableView reloadData]; }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -33,8 +31,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [events removeObjectAtIndex:indexPath.row];
-        [eventView reloadData];
+        [tasks removeObjectAtIndex:indexPath.row];
+        [self.tableView reloadData];
     }
 }
 
@@ -42,21 +40,21 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell"];
     
     if(cell == nil) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"taskCell"];
-    cell.textLabel.text = ((Event*)[events objectAtIndex:indexPath.row]).title;
+    cell.textLabel.text = ((Task*)[tasks objectAtIndex:indexPath.row]).title;
     
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if([events count] > 0){
+    if(tasks.count > 0){
         if(tableView.backgroundView != nil) tableView.backgroundView = nil;
         if(tableView.separatorStyle != UITableViewCellSeparatorStyleSingleLine) tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        return [events count];
+        return tasks.count;
     }
     else{
         /*Else display an empty message*/
         UILabel *messageLabel = [[UILabel alloc] init];
-        messageLabel.text = @"No events to show\nTo create a new event, tap ➕";
+        messageLabel.text = @"No tasks to show\nTo create a new task, tap ➕";
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = NSTextAlignmentCenter;
         [messageLabel sizeToFit];
@@ -68,18 +66,19 @@
     }
 }
 
--(void) refreshTable{
+-(void) refreshTable {
+    //pull in data from file
     [refreshControl endRefreshing];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"selectTaskSegue"]){
         TaskDetailViewController *destVC = segue.destinationViewController;
-        destVC.event = [events objectAtIndex:[eventView indexPathForSelectedRow].row];
-        destVC.events = events;
+        destVC.task = [tasks objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        destVC.tasks = tasks;
     } else if([segue.identifier isEqualToString:@"newTaskSegue"]){
         EditTaskViewController *destVC = segue.destinationViewController;
-        destVC.events = events;
+        destVC.tasks = tasks;
     }
 }
 @end
