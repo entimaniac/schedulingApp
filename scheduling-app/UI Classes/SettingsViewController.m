@@ -22,6 +22,7 @@
     if([segue.identifier isEqualToString:@"notificationSoundSelection"]){
         SettingsDetailViewController *destVC = segue.destinationViewController;
         destVC.notificationSounds = notificationSounds;
+        destVC.selectedSound = sound;
     }
 }
 @end

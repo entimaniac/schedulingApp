@@ -12,7 +12,7 @@
 @end
 
 @implementation SettingsDetailViewController
-@synthesize selectedSound, notificationSounds, indexPathSelectedCell;
+@synthesize selectedSound, notificationSounds, indexPathSelectedCell, notificationName;
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"notificationSoundCell"];

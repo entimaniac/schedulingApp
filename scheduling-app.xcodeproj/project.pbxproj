@@ -29,7 +29,6 @@
 		63D9224F1B54921F00A34EAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D9224D1B54921F00A34EAA /* LaunchScreen.xib */; };
 		63D9225B1B54921F00A34EAA /* scheduling_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D9225A1B54921F00A34EAA /* scheduling_appTests.m */; };
 		63D922661B55614A00A34EAA /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D922651B55614A00A34EAA /* MCController.m */; };
-		63D922691B557A2E00A34EAA /* testFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63D922681B557A2E00A34EAA /* testFile.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -94,7 +93,6 @@
 		63D9225A1B54921F00A34EAA /* scheduling_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = scheduling_appTests.m; sourceTree = "<group>"; };
 		63D922651B55614A00A34EAA /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCController.m; sourceTree = "<group>"; };
 		63D922671B55617200A34EAA /* MCController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCController.h; sourceTree = "<group>"; };
-		63D922681B557A2E00A34EAA /* testFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testFile.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +200,6 @@
 				634F2FFE1B5EE0630005B486 /* UI Icons */,
 				63D9223C1B54921F00A34EAA /* Info.plist */,
 				63D9223D1B54921F00A34EAA /* main.m */,
-				63D922681B557A2E00A34EAA /* testFile.plist */,
 				63C098F81B5D0B6D00D2D2FD /* notificationSounds.plist */,
 			);
 			name = "Supporting Files";
@@ -306,7 +303,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63D922691B557A2E00A34EAA /* testFile.plist in Resources */,
 				63D9224A1B54921F00A34EAA /* Main.storyboard in Resources */,
 				63D9224F1B54921F00A34EAA /* LaunchScreen.xib in Resources */,
 				634F30031B5EE06F0005B486 /* Settings-32.png in Resources */,
