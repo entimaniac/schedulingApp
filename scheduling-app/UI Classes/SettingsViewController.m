@@ -12,8 +12,16 @@
 @end
 
 @implementation SettingsViewController
+@synthesize sound, notificationSounds;
 -(void) viewDidLoad{
-    
-    
+    notificationSounds = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"notificationSounds" ofType:@"plist"]];
+    sound = [notificationSounds objectAtIndex:0];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"notificationSoundSelection"]){
+        SettingsDetailViewController *destVC = segue.destinationViewController;
+        destVC.notificationSounds = notificationSounds;
+    }
 }
 @end

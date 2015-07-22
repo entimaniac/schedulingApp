@@ -12,16 +12,13 @@
 @end
 
 @implementation SettingsDetailViewController
-@synthesize notificationSounds, indexPathSelectedCell;
--(void) viewDidLoad{
-    notificationSounds = [[NSArray alloc] initWithContentsOfFile:@"notificationSounds.plist"];
-}
+@synthesize selectedSound, notificationSounds, indexPathSelectedCell;
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"notificationSoundCell"];
     if(cell == nil) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"notificationSoundCell"];
     
-    cell.textLabel.text = [notificationSounds objectAtIndex: indexPath.row];
+    cell.textLabel.text = [[notificationSounds objectAtIndex: indexPath.row] objectForKey:@"name"];
 
     return cell;
 }
@@ -31,6 +28,7 @@
         [self.tableView cellForRowAtIndexPath:indexPathSelectedCell].accessoryType = nil;
         [self.tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
         indexPathSelectedCell = indexPath;
+        selectedSound = [notificationSounds objectAtIndex:indexPath.row];
     }
 }
 

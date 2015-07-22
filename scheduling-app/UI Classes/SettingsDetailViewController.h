@@ -14,4 +14,5 @@
     @property(strong, nonatomic) NSIndexPath *indexPathSelectedCell;
     @property soundID *notificationName;
     @property(strong, nonatomic) NSArray *notificationSounds;
+    @property(strong, nonatomic) NSDictionary *selectedSound;
 @end

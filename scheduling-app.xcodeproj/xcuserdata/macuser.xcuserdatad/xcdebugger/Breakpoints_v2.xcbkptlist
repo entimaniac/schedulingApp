@@ -103,13 +103,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "scheduling-app/UI Classes/SettingsDetailViewController.m"
-            timestampString = "459212392.827502"
+            filePath = "scheduling-app/UI Classes/TaskDetailShareViewController.m"
+            timestampString = "459213030.153785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-nameFieldValueChanged:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
